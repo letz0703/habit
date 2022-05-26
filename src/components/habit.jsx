@@ -16,7 +16,7 @@ export default class Habit extends Component {
   render() {
     const { name, count } = this.props.habit;
     return (
-      <li className='habit'>
+      <li className='habit dp-center'>
         <span className='habit-name'>{name}</span>
         <span className='habit-count'>{count}</span>
         <button
