@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import React, {Component} from 'react'
 
 export default class Navbar extends Component {
-  render() {
-    return (
-      <>
-        <div>
-          <span class='f2 pl2 pr2'>
-            <i class='fa-solid fa-leaf green'></i>
-          </span>
-          <span class='f1 blue i b pr1'>Habit Tracker</span>
-          <span class='habit-count'>{this.props.totalCount}</span>
-        </div>
-      </>
-    );
-  }
+	render() {
+		return (
+			<>
+				<div>
+					<span className='f2 pl2 pr2'>
+						<i className='fa-solid fa-leaf green'></i>
+					</span>
+					<span className='f1 blue i b pr1'>Habit Tracker</span>
+					<span className='habit-count'>{this.props.totalCount}</span>
+				</div>
+			</>
+		)
+	}
 }
