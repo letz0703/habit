@@ -1,23 +1,23 @@
-import React, {Component} from 'react'
-import Habit from './habit'
-import HabitAddForm from './habitAddForm'
+import React, {Component} from 'react';
+import Habit from './habit';
+import HabitAddForm from './habitAddForm';
 
 export default class Habits extends Component {
 	handleIncrement = (habit) => {
-		this.props.onIncrement(habit)
-	}
+		this.props.onIncrement(habit);
+	};
 
 	handleDecrement = (habit) => {
-		this.props.onDecrement(habit)
-	}
+		this.props.onDecrement(habit);
+	};
 
 	handleDelete = (habit) => {
-		this.props.onDelete(habit)
-	}
+		this.props.onDelete(habit);
+	};
 
 	handleAdd = (habitName) => {
-		this.props.onAdd(habitName)
-	}
+		this.props.onAdd(habitName);
+	};
 	render() {
 		return (
 			<>
@@ -33,7 +33,10 @@ export default class Habits extends Component {
 						/>
 					))}
 				</ul>
+				<button className='button-habit' onClick={this.props.onReset}>
+					reset
+				</button>
 			</>
-		)
+		);
 	}
 }

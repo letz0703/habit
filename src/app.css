@@ -101,6 +101,15 @@ button {
 	background-color: greenyellow;
 }
 
+.button-habit {
+	height: 100%;
+	font-size: 1.5rem;
+	color: var(--text-color);
+	margin-left: 1em;
+	padding: 1rem 1.2rem;
+	background-color: green;
+}
+
 .button-add {
 	height: 100%;
 	font-size: 1.5rem;
@@ -108,4 +117,10 @@ button {
 	background-color: green;
 	color: #e8e8e8;
 	margin-left: 1em;
+}
+
+.buttonResetHabits {
+	font-size: 1.5rem;
+	padding: 1rem 1.2rem;
+	background-color: green;
 }
