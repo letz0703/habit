@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react';
 
-export default class Navbar extends Component {
+export default class Navbar extends PureComponent {
 	render() {
 		return (
 			<>
@@ -12,6 +12,6 @@ export default class Navbar extends Component {
 					<span className='habit-count'>{this.props.totalCount}</span>
 				</div>
 			</>
-		)
+		);
 	}
 }

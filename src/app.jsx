@@ -14,19 +14,27 @@ export default class App extends Component {
 	};
 
 	handleIncrement = (habit) => {
-		const habits = [...this.state.habits];
-		const id = habits.indexOf(habit);
-		const count = habits[id].count;
-		habits[id].count++;
+		// const habits = [...this.state.habits];
+		// const id = habits.indexOf(habit);
+		// const count = habits[id].count;
+		// habits[id].count++;
+		const habits = this.state.habits.map((item) => {
+			if (item.id === habit.id) {
+				return {...habit, count: habit.count + 1};
+			}
+			return item;
+		});
 		this.setState({habits});
 	};
 
 	handleDecrement = (habit) => {
-		// console.log(`handleDecrement ${habit.name}`);
-		const habits = [...this.state.habits];
-		const id = habits.indexOf(habit);
-		const count = habits[id].count - 1;
-		count >= 0 && habits[id].count--;
+		const habits = this.state.habits.map((item) => {
+			if (item.id === habit.id) {
+				const count = habit.count - 1;
+				return {...habit, count: count < 0 ? 0 : count};
+			}
+			return item;
+		});
 		this.setState({habits});
 	};
 
@@ -44,15 +52,17 @@ export default class App extends Component {
 	};
 
 	handleReset = () => {
-		const habits = [...this.state.habits];
-		habits.map((habit) => {
-			habit.count = 0;
+		const habits = this.state.habits.map((habit) => {
+			if (habit.count !== 0) {
+				return {...habit, count: 0};
+			}
 			return habit;
 		});
 		this.setState({habits});
 	};
 
 	render() {
+		console.log('habits');
 		return (
 			<>
 				<Navbar
