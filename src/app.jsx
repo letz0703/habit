@@ -14,10 +14,6 @@ export default class App extends Component {
 	};
 
 	handleIncrement = (habit) => {
-		// const habits = [...this.state.habits];
-		// const id = habits.indexOf(habit);
-		// const count = habits[id].count;
-		// habits[id].count++;
 		const habits = this.state.habits.map((item) => {
 			if (item.id === habit.id) {
 				return {...habit, count: habit.count + 1};
