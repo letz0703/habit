@@ -8,8 +8,9 @@ export default class HabitAddForm extends PureComponent {
 		const name = this.refInput.current.value;
 		name && this.props.onAdd(name);
 		this.refForm.current.reset();
-		this.refInput.focus();
 		// this.inputRef = ''
+		// todo focus ok, but error occur
+		// this.refForm.focus();
 	};
 
 	render() {
