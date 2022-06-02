@@ -1,30 +1,25 @@
-import React, {PureComponent} from 'react';
+import React, {memo} from 'react';
 
-// import React, {PureComponent} from 'react';
-
-const HabitAddForm = (props) => {
+const HabitAddForm = memo((props) => {
 	const refForm = React.createRef();
 	const refInput = React.createRef();
 	const onSubmit = (e) => {
 		e.preventDefault();
-		const name = this.refInput.current.value;
-		name && this.props.onAdd(name);
-		this.refForm.current.reset();
-		// this.inputRef = ''
-		// todo focus ok, but error occur
-		// this.refForm.focus();
+		const name = refInput.current.value;
+		name && props.onAdd(name);
+		refForm.current.reset();
 	};
 	return (
-		<form className='form-add ' onSubmit={this.onSubmit} ref={this.refForm}>
+		<form className='form-add ' onSubmit={onSubmit} ref={refForm}>
 			<input
-				ref={this.refInput}
+				ref={refInput}
 				type='text'
 				className='input-add'
-				onSubmit={this.onSubmit}
+				onSubmit={onSubmit}
 			/>
 			<button className='button-add '>Add</button>
 		</form>
 	);
-};
+});
 
 export default HabitAddForm;
