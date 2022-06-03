@@ -58,7 +58,7 @@ export default class App extends Component {
 	};
 
 	render() {
-		console.log('habits');
+		// console.log('habits');
 		return (
 			<>
 				<Navbar
